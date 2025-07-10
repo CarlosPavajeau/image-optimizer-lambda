@@ -1,0 +1,25 @@
+{
+  "name": "image-optimizer-lambda",
+  "version": "1.0.0",
+  "description": "AWS Lambda function to optimize images uploaded to S3",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target node",
+    "deploy": "bun run build && zip -r function.zip dist/ node_modules/ && aws lambda update-function-code --function-name image-optimizer --zip-file fileb://function.zip",
+    "dev": "bun --watch src/index.ts",
+    "format": "bunx biome format --write"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.1.1",
+    "@types/aws-lambda": "^8.10.150",
+    "@types/bun": "latest",
+    "@types/node": "^24.0.13"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.844.0",
+    "sharp": "^0.34.3"
+  }
+}

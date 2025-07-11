@@ -15,7 +15,7 @@ const MAX_WIDTH = 800;
 const QUALITY = 85;
 
 const s3Client = new S3Client({
-  region: process.env.AWS_REGION || "us-east-1",
+  region: process.env.AWS_REGION || "us-east-2",
 });
 
 const SUPPORTED_FORMATS = [".jpg", ".jpeg", ".png", ".webp", ".tiff", ".bmp"];

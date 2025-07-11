@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "AWS Lambda function to optimize images uploaded to S3",
   "main": "dist/index.js",
+  "type": "module",
   "scripts": {
     "build": "bun build ./src/index.ts --outdir ./dist --target node",
     "deploy": "bun run build && zip -r function.zip dist/ node_modules/ && aws lambda update-function-code --function-name image-optimizer --zip-file fileb://function.zip",

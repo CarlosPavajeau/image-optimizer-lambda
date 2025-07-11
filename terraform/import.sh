@@ -1,8 +1,4 @@
 #!/bin/bash
-
-SOURCE_BUCKET="your-actual-source-bucket-name"
-OPTIMIZED_BUCKET="your-actual-optimized-bucket-name"
-
 echo "🔄 Importing existing S3 buckets into Terraform..."
 
 # Initialize Terraform

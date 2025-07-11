@@ -149,7 +149,6 @@ resource "aws_lambda_function" "image_optimizer" {
   environment {
     variables = {
       OPTIMIZED_BUCKET_NAME = aws_s3_bucket.optimized.bucket
-      AWS_REGION           = var.aws_region
     }
   }
 

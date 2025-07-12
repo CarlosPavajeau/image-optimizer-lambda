@@ -100,7 +100,7 @@ function generateOptimizedKey(
   contentType: string,
 ): string {
   const lastDotIndex = originalKey.lastIndexOf(".");
-  const baseName = originalKey.substring(0, lastDotIndex);
+  const baseName = originalKey.substring(0, lastDotIndex !== -1 ? lastDotIndex : undefined);
 
   if (contentType === "image/webp") {
     return `${baseName}.webp`;

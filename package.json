@@ -8,7 +8,11 @@
     "build": "bun build ./src/index.ts --outdir ./dist --target node",
     "deploy": "bun run build && zip -r function.zip dist/ node_modules/ && aws lambda update-function-code --function-name image-optimizer --zip-file fileb://function.zip",
     "dev": "bun --watch src/index.ts",
-    "format": "bunx biome format --write"
+    "format": "bunx biome format --write",
+    "process-existing": "bun run scripts/process-existing-images.ts",
+    "process-existing-quick": "bun run scripts/quick-process.ts",
+    "process-existing-force": "bun run scripts/process-existing-images.ts --force",
+    "process-existing-lambda": "bun run scripts/process-existing-images.ts --use-lambda --delay=2000"
   },
   "devDependencies": {
     "@biomejs/biome": "2.1.1",

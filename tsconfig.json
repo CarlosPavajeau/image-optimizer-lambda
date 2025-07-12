@@ -4,9 +4,7 @@
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "lib": [
-      "ES2022"
-    ],
+    "lib": ["ES2022"],
     // Output configuration
     "outDir": "./dist",
     "rootDir": "./src",
@@ -34,12 +32,9 @@
     // Bun-specific optimizations
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "useDefineForClassFields": true,
+    "useDefineForClassFields": true
   },
-  "include": [
-    "src/**/*",
-    "types/**/*"
-  ],
+  "include": ["src/**/*", "types/**/*"],
   "exclude": [
     "node_modules",
     "dist",
